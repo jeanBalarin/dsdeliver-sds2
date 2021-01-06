@@ -58,4 +58,24 @@ public class OrderService {
 		
 		return new OrderDTO(order);
 	}
+
+	//alterando o pedido de pendente para entregue
+	@Transactional
+	public OrderDTO setDelivered(Long id) {
+		//getOne instancia um obj igual ao do banco mas
+		//esse obj não tem nenhuma relação com o banco antes de salvar.
+		Order order = repository.getOne(id);
+		order.setStatus(OrderStatus.DELIVERED);
+		
+		//salvando alteração no banco.
+		order = repository.save(order);
+		
+		return new OrderDTO(order);
+	}
+
+
+
+
+
 }
+	
