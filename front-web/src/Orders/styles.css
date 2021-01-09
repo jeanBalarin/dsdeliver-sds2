@@ -141,7 +141,7 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .order-location-content {
     width: 70%;
     margin: 30px 0 120px 0;
@@ -152,11 +152,13 @@
     border-radius: 10px;
   }
   
+
   .filter-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
   }
+
   
   .filter {
     width: 80%;
@@ -184,6 +186,7 @@
     color: var(--secondary-color);
   }
   
+
   .order-summary-container {
     display: flex;
     justify-content: center;

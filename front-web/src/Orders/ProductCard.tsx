@@ -1,7 +1,19 @@
-import Product from './types';
+import { Product } from "./types";
+
 
 type Props = {
     product: Product; 
+}
+
+function formatPrice(price: number){
+    const formatter = new Intl.NumberFormat(
+        'pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+            minimumFractionDigits: 2
+        });
+
+        return formatter.format(price);
 }
 
 
@@ -18,7 +30,7 @@ function ProductsCard( { product }: Props){
             ></img>
             
             <h3 className="order-card-price" >
-               R${product.price}
+               {formatPrice(product.price)}
             </h3>
             <div className="order-card-description">
                 <h3>Descrição</h3>
